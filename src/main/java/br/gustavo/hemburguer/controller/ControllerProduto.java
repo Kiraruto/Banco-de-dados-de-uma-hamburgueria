@@ -1,8 +1,8 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity.table_produto.dto.DTOProdutoSemDTO;
 import br.gustavo.hemburguer.entity.table_produto.Produto;
 import br.gustavo.hemburguer.entity.table_produto.dto.DTOProduto;
+import br.gustavo.hemburguer.entity.table_produto.dto.DTOProdutoSemDTO;
 import br.gustavo.hemburguer.entity.table_produto.repository.ProdutoRepository;
 import br.gustavo.hemburguer.entity.table_produto.service.ProdutoService;
 import jakarta.transaction.Transactional;
@@ -58,6 +58,7 @@ public class ControllerProduto {
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity putProduto(@Valid @RequestBody DTOProduto dtoProduto, @PathVariable Long id) {
+
         return produtoService.put(dtoProduto,id);
     }
 
@@ -68,7 +69,7 @@ public class ControllerProduto {
         Optional<Produto> produtoOptional = produtoRepository.findById(id);
 
         if (!produtoOptional.isPresent()) {
-            return ResponseEntity.status(404).body("Produto não Encontrado");
+            return ResponseEntity.notFound().build();
         }
 
         produtoRepository.deleteById(id);
