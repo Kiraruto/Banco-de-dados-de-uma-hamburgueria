@@ -1,6 +1,6 @@
 package br.gustavo.hemburguer.security.service;
 
-import br.gustavo.hemburguer.entity.repository.UsuarioRepository;
+import br.gustavo.hemburguer.entity_tables.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

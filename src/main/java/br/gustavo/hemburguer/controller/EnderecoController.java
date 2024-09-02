@@ -1,7 +1,7 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity.table_pedido.dto.DTOEndereco;
-import br.gustavo.hemburguer.entity.table_pedido.service.EnderecoService;
+import br.gustavo.hemburguer.entity_tables.table_pedido.dto.DTOEndereco;
+import br.gustavo.hemburguer.entity_tables.table_pedido.service.EnderecoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

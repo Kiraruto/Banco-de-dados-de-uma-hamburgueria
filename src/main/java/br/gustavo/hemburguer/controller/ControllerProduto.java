@@ -1,10 +1,10 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity.table_produto.Produto;
-import br.gustavo.hemburguer.entity.table_produto.dto.DTOProduto;
-import br.gustavo.hemburguer.entity.table_produto.dto.DTOProdutoSemDTO;
-import br.gustavo.hemburguer.entity.table_produto.repository.ProdutoRepository;
-import br.gustavo.hemburguer.entity.table_produto.service.ProdutoService;
+import br.gustavo.hemburguer.entity_tables.table_produto.Produto;
+import br.gustavo.hemburguer.entity_tables.table_produto.dto.DTOProduto;
+import br.gustavo.hemburguer.entity_tables.table_produto.dto.DTOProdutoSemDTO;
+import br.gustavo.hemburguer.entity_tables.table_produto.repository.ProdutoRepository;
+import br.gustavo.hemburguer.entity_tables.table_produto.service.ProdutoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

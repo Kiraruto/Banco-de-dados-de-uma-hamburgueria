@@ -1,6 +1,6 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity.table_pedido.Usuario;
+import br.gustavo.hemburguer.entity_tables.table_pedido.Usuario;
 import br.gustavo.hemburguer.security.TokenService;
 import br.gustavo.hemburguer.security.dto.DadosAutenticacao;
 import br.gustavo.hemburguer.security.dto.TokenDadosJWT;

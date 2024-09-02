@@ -1,7 +1,7 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPedido;
-import br.gustavo.hemburguer.entity.table_pedido.service.PedidoService;
+import br.gustavo.hemburguer.entity_tables.table_pedido.dto.DTOPedido;
+import br.gustavo.hemburguer.entity_tables.table_pedido.service.PedidoService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
