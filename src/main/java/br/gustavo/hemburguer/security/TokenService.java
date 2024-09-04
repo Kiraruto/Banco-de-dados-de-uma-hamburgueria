@@ -21,7 +21,7 @@ public class TokenService {
     public String gerarToke(Usuario usuario) {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
-            return   JWT.create()
+            return JWT.create()
                     .withIssuer("API ForumHub")
                     .withSubject(usuario.getEmail())
                     .withExpiresAt(dataExpiracao())
@@ -34,7 +34,7 @@ public class TokenService {
     public String getSubject(String tokenJWT) {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
-            return  JWT.require(algoritmo)
+            return JWT.require(algoritmo)
                     .withIssuer("API ForumHub")
                     .build()
                     .verify(tokenJWT)

@@ -34,7 +34,11 @@ public class ControllerUsuario {
     @PostMapping
     @Transactional
     public ResponseEntity criarUsuario(@Valid @RequestBody DTOUsuairo dtoUsuairo) {
-        return usuarioService.save(dtoUsuairo);
+        try {
+            return usuarioService.save(dtoUsuairo);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @GetMapping

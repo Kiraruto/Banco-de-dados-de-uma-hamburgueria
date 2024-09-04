@@ -1,1 +1,1 @@
-ALTER TABLE endereco MODIFY city  VARCHAR(255) DEFAULT 'Barra De Guabiraba';
+ALTER TABLE endereco MODIFY city VARCHAR(255) DEFAULT 'Barra De Guabiraba';

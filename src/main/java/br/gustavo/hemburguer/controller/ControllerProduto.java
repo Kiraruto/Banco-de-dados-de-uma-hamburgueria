@@ -59,7 +59,7 @@ public class ControllerProduto {
     @Transactional
     public ResponseEntity putProduto(@Valid @RequestBody DTOProduto dtoProduto, @PathVariable Long id) {
 
-        return produtoService.put(dtoProduto,id);
+        return produtoService.put(dtoProduto, id);
     }
 
     @DeleteMapping("/{id}")
