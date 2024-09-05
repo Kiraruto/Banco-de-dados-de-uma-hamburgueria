@@ -1,9 +1,9 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity_tables.repository.PedidoRepository;
-import br.gustavo.hemburguer.entity_tables.table_pedido.Pedido;
-import br.gustavo.hemburguer.entity_tables.table_pedido.dto.DTOPedido;
-import br.gustavo.hemburguer.entity_tables.table_pedido.service.PedidoService;
+import br.gustavo.hemburguer.entity.repository.PedidoRepository;
+import br.gustavo.hemburguer.entity.table_pedido.Pedido;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPedido;
+import br.gustavo.hemburguer.entity.table_pedido.service.PedidoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

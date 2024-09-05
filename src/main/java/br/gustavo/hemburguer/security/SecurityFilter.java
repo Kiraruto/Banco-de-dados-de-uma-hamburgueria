@@ -1,7 +1,7 @@
 package br.gustavo.hemburguer.security;
 
 
-import br.gustavo.hemburguer.entity_tables.repository.UsuarioRepository;
+import br.gustavo.hemburguer.entity.repository.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,12 +1,12 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.entity_tables.repository.EnderecoRepositoy;
-import br.gustavo.hemburguer.entity_tables.repository.PerfilRepository;
-import br.gustavo.hemburguer.entity_tables.repository.UsuarioRepository;
-import br.gustavo.hemburguer.entity_tables.table_pedido.Usuario;
-import br.gustavo.hemburguer.entity_tables.table_pedido.dto.DTOPerfil;
-import br.gustavo.hemburguer.entity_tables.table_pedido.dto.DTOUsuairo;
-import br.gustavo.hemburguer.entity_tables.table_pedido.service.UsuarioService;
+import br.gustavo.hemburguer.entity.repository.EnderecoRepositoy;
+import br.gustavo.hemburguer.entity.repository.PerfilRepository;
+import br.gustavo.hemburguer.entity.repository.UsuarioRepository;
+import br.gustavo.hemburguer.entity.table_pedido.Usuario;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPerfil;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOUsuairo;
+import br.gustavo.hemburguer.entity.table_pedido.service.UsuarioService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
