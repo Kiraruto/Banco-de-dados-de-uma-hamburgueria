@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioService {
 
@@ -33,7 +35,7 @@ public class UsuarioService {
     }
 
     @Transactional
-    public ResponseEntity save(@Valid DTOUsuairo dtoUsuairo) {
+    public ResponseEntity saveUser(@Valid DTOUsuairo dtoUsuairo) {
 
         String hashedPassword = hashPassWords(dtoUsuairo.password());
         String hashedCpf = hashCpf(dtoUsuairo.cpf());
@@ -42,11 +44,27 @@ public class UsuarioService {
             return ResponseEntity.badRequest().body("Já existe um perfil com este EMAIL");
         }
 
-        Usuario usuario = new Usuario(dtoUsuairo.name(), dtoUsuairo.email(), hashedCpf, hashedPassword, dtoUsuairo.role());
+        Usuario usuario = new Usuario(dtoUsuairo.name(), dtoUsuairo.email(), hashedCpf, hashedPassword);
+        usuario.setRoleUser();
         usuarioRepository.save(usuario);
         perfilRepository.save(new Perfil(dtoUsuairo));
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    public ResponseEntity saveModerator(@Valid DTOUsuairo dtoUsuairo) {
+        String hashedPassword = hashPassWords(dtoUsuairo.password());
+        String hashedCpf = hashCpf(dtoUsuairo.cpf());
+
+        if (usuarioRepository.existsByEmail(dtoUsuairo.email())) {
+            return ResponseEntity.badRequest().body("Já existe um perfil com este EMAIL");
+        }
+
+        Usuario usuario = new Usuario(dtoUsuairo.name(), dtoUsuairo.email(), hashedCpf, hashedPassword);
+        usuario.setRoleModerator();
+        usuarioRepository.save(usuario);
+        perfilRepository.save(new Perfil(dtoUsuairo));
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }

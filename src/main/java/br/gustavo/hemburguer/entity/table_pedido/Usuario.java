@@ -7,13 +7,15 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+
+import static br.gustavo.hemburguer.entity.table_pedido.enumclass.Role.ROLE_MODERATOR;
+import static br.gustavo.hemburguer.entity.table_pedido.enumclass.Role.ROLE_USER;
 
 @Entity(name = "usuario")
 @Table(name = "usuario")
@@ -32,17 +34,24 @@ public class Usuario implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public Usuario(@NotNull String name, @NotNull @Email String email, @NotNull @CPF String cpf, String hashedPassword, @NotNull Role role) {
+    public Usuario(@NotNull String name, @NotNull @Email String email, String hashedCpf, String hashedPassword) {
         this.name = name;
         this.email = email;
-        this.cpf = cpf;
+        this.cpf = hashedCpf;
         this.password = hashedPassword;
-        this.role = role;
+    }
+
+    public void setRoleUser() {
+        this.role = ROLE_USER;
+    }
+
+    public void setRoleModerator() {
+        this.role = ROLE_MODERATOR;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority("MODERATOR"));
     }
 
     @Override

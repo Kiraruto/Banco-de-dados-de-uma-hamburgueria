@@ -34,11 +34,13 @@ public class ControllerUsuario {
     @PostMapping
     @Transactional
     public ResponseEntity criarUsuario(@Valid @RequestBody DTOUsuairo dtoUsuairo) {
-        try {
-            return usuarioService.save(dtoUsuairo);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+            return usuarioService.saveUser(dtoUsuairo);
+    }
+
+    @PostMapping("/moderator")
+    @Transactional
+    public ResponseEntity criarUsuarioModerator(@Valid @RequestBody DTOUsuairo dtoUsuario) {
+            return usuarioService.saveModerator(dtoUsuario);
     }
 
     @GetMapping
@@ -65,5 +67,4 @@ public class ControllerUsuario {
 
         return ResponseEntity.noContent().build();
     }
-
 }

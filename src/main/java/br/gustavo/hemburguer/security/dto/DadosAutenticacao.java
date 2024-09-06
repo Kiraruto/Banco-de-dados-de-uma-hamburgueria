@@ -1,5 +1,7 @@
 package br.gustavo.hemburguer.security.dto;
 
-public record DadosAutenticacao(String email,
-                                String password) {
+import jakarta.validation.constraints.NotNull;
+
+public record DadosAutenticacao(@NotNull String email,
+                                @NotNull String password) {
 }

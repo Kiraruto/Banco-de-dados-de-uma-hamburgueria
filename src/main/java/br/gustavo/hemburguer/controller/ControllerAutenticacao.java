@@ -1,6 +1,8 @@
 package br.gustavo.hemburguer.controller;
 
+import br.gustavo.hemburguer.entity.repository.UsuarioRepository;
 import br.gustavo.hemburguer.entity.table_pedido.Usuario;
+import br.gustavo.hemburguer.entity.table_pedido.enumclass.Role;
 import br.gustavo.hemburguer.security.TokenService;
 import br.gustavo.hemburguer.security.dto.DadosAutenticacao;
 import br.gustavo.hemburguer.security.dto.TokenDadosJWT;
@@ -24,13 +26,22 @@ public class ControllerAutenticacao {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @PostMapping
     public ResponseEntity<?> efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
+
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.email(), dados.password());
         var authentication = manager.authenticate(authenticationToken);
 
-        var tokenJWT = tokenService.gerarToke((Usuario) authentication.getPrincipal());
+        var usuario = (Usuario) authentication.getPrincipal();
 
+        if (usuario.getRole() != Role.ROLE_MODERATOR) {
+            return ResponseEntity.badRequest().body("O usuário não é moderador");
+        }
+
+        var tokenJWT = tokenService.gerarToke(usuario);
         return ResponseEntity.ok(new TokenDadosJWT(tokenJWT));
     }
 }

@@ -1,6 +1,6 @@
 package br.gustavo.hemburguer.entity.table_pedido.enumclass;
 
 public enum Role {
-    MODERATOR,
-    USER
+    ROLE_USER,
+    ROLE_MODERATOR
 }
