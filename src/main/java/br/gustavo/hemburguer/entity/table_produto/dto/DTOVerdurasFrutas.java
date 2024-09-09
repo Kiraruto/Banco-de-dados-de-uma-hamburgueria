@@ -6,9 +6,9 @@ import java.sql.Timestamp;
 
 public record DTOVerdurasFrutas(@NotNull String name,
                                 @NotNull String origin,
-                                @NotNull Integer weight,
+                                @NotNull Double weight,
                                 @NotNull Timestamp harvest_date,
-                                @NotNull Integer price,
+                                @NotNull Double price,
                                 @NotNull Timestamp validity,
                                 Long produto_id) {
 }

@@ -57,6 +57,10 @@ public class Carne {
         }
     }
 
+    public Carne(long l) {
+        this.id = l;
+    }
+
     public Long getProdutoId() {
         return produto_id != null ? produto_id.getId() : null;
     }

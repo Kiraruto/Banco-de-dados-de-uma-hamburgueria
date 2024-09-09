@@ -42,6 +42,11 @@ public class Paes {
         this.validity = dtoPaes.validity();
     }
 
+    public Paes(long l) {
+        this.id = l;
+    }
+
+
     public Long getProdutoId() {
         return produto_id != null ? produto_id.getId() : null;
     }

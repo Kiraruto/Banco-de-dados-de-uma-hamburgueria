@@ -4,12 +4,14 @@ import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPagamento;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "pagamento")
 @Table(name = "pagamento")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

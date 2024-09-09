@@ -22,9 +22,9 @@ public class VerdurasFrutas {
     private Long id;
     private String name;
     private String origin;
-    private Integer weight;
+    private Double weight;
     private Timestamp harvest_date;
-    private Integer price;
+    private Double price;
     private Timestamp validity;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -40,6 +40,10 @@ public class VerdurasFrutas {
         this.harvest_date = dtoVerdurasFrutas.harvest_date();
         this.price = dtoVerdurasFrutas.price();
         this.validity = dtoVerdurasFrutas.validity();
+    }
+
+    public VerdurasFrutas(long l) {
+        this.id = l;
     }
 
     public Long getProdutoId() {

@@ -60,6 +60,10 @@ public class Produto {
         }
     }
 
+    public Produto(long l) {
+        this.id = l;
+    }
+
     public void atualizarInformacoes(@Valid DTOProduto dtoProduto) {
 
         if (dtoProduto.carne_id() != null) {
