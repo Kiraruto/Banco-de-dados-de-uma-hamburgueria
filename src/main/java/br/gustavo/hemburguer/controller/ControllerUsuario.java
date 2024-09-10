@@ -34,37 +34,25 @@ public class ControllerUsuario {
     @PostMapping
     @Transactional
     public ResponseEntity criarUsuario(@Valid @RequestBody DTOUsuairo dtoUsuairo) {
-            return usuarioService.saveUser(dtoUsuairo);
+        return usuarioService.saveUser(dtoUsuairo);
     }
 
     @PostMapping("/moderator")
     @Transactional
     public ResponseEntity criarUsuarioModerator(@Valid @RequestBody DTOUsuairo dtoUsuario) {
-            return usuarioService.saveModerator(dtoUsuario);
+        return usuarioService.saveModerator(dtoUsuario);
     }
 
     @GetMapping
     public ResponseEntity verTodosUsuarios() {
 
-        var savePerfis = perfilRepository.findAll();
-        var saveDTOPerfis = DTOPerfil.fromPerfilList(savePerfis);
-
-        return ResponseEntity.ok(saveDTOPerfis);
+        return usuarioService.verTodosUsuariosTable();
     }
 
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity deletarUsuario(@PathVariable Long id) {
 
-        Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
-
-        if (!usuarioOptional.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        usuarioRepository.deleteById(id);
-        enderecoRepositoy.deleteByUser(id);
-
-        return ResponseEntity.noContent().build();
+        return usuarioService.deletarUsuarioPeloId(id);
     }
 }

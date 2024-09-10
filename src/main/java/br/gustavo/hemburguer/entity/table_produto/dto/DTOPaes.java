@@ -1,5 +1,6 @@
 package br.gustavo.hemburguer.entity.table_produto.dto;
 
+import br.gustavo.hemburguer.entity.table_produto.Paes;
 import jakarta.validation.constraints.NotNull;
 
 import java.sql.Timestamp;
@@ -12,4 +13,7 @@ public record DTOPaes(@NotNull String name,
                       @NotNull Timestamp validity,
                       Long produto_id) {
 
+    public DTOPaes(Paes paes) {
+        this(paes.getName(), paes.getType_of_bread(), paes.getWeight(), paes.getManufacturing_date(), paes.getPrice(), paes.getValidity(), paes.getProdutoId());
+    }
 }

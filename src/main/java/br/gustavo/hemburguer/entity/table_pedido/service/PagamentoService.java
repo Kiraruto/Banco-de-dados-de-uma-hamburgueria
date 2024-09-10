@@ -40,4 +40,20 @@ public class PagamentoService {
 
         return ResponseEntity.badRequest().build();
     }
+
+    public ResponseEntity salvarTruePagamento(Long id) {
+
+        Optional<Pagamento> pagamentoOptional = pagamentoRepository.findById(id);
+
+        if (!pagamentoOptional.isPresent()) {
+            return ResponseEntity.badRequest().body("Id nulo");
+        }
+
+        Optional<Pagamento> pagamentoOptionalStatus = pagamentoRepository.findStatusById(id);
+
+        var savePagamento = pagamentoOptionalStatus.get();
+        savePagamento.statusTrue();
+
+        return ResponseEntity.ok().build();
+    }
 }

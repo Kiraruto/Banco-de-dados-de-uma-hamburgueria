@@ -1,4 +1,4 @@
-package br.gustavo.hemburguer.entity.table_produto.test;
+package br.gustavo.hemburguer.entity.table_produto;
 
 import br.gustavo.hemburguer.entity.table_produto.Carne;
 import br.gustavo.hemburguer.entity.table_produto.Paes;
@@ -31,7 +31,6 @@ public class ProdutoTest {
         Paes paes = new Paes(1L, "pão", "francês", 500, timestampAll, 0.20, timestampAll, new Produto(1L));
         VerdurasFrutas verdura = new VerdurasFrutas(1L, "Alface", "Brazil", 2.0, timestampAll, 5.0, timestampAll, new Produto(1L));
 
-
         List<Carne> carnes = Arrays.asList(carne);
         List<VerdurasFrutas> verdurasFrutas = Arrays.asList(verdura);
 
@@ -42,11 +41,27 @@ public class ProdutoTest {
 
         assertEquals(1, produto.getCarnes_id().size());
         assertEquals("Alcatra", produto.getCarnes_id().get(0).getName());
+        assertEquals("Brazil", produto.getCarnes_id().get(0).getOrigin());
+        assertEquals(Double.valueOf(5.5), produto.getCarnes_id().get(0).getFat_percentage());
+        assertEquals(Integer.valueOf(50), produto.getCarnes_id().get(0).getWeight());
+        assertEquals(Double.valueOf(80.5), produto.getCarnes_id().get(0).getPrice());
+        assertEquals(timestampAll, produto.getCarnes_id().get(0).getHarvest_date());
+        assertEquals(timestampAll, produto.getCarnes_id().get(0).getValidity());
 
         assertEquals("pão", produto.getPaes_id().getName());
+        assertEquals("francês", produto.getPaes_id().getType_of_bread());
+        assertEquals(Integer.valueOf(500), produto.getPaes_id().getWeight());
+        assertEquals(Double.valueOf(0.20), produto.getPaes_id().getPrice());
+        assertEquals(timestampAll, produto.getPaes_id().getValidity());
+        assertEquals(timestampAll, produto.getPaes_id().getManufacturing_date());
 
         assertEquals(1, produto.getVerdurasFrutas_id().size());
         assertEquals("Alface", produto.getVerdurasFrutas_id().get(0).getName());
+        assertEquals("Brazil", produto.getVerdurasFrutas_id().get(0).getOrigin());
+        assertEquals(Double.valueOf(2.0), produto.getVerdurasFrutas_id().get(0).getWeight());
+        assertEquals(Double.valueOf(5.0), produto.getVerdurasFrutas_id().get(0).getPrice());
+        assertEquals(timestampAll, produto.getVerdurasFrutas_id().get(0).getHarvest_date());
+        assertEquals(timestampAll, produto.getVerdurasFrutas_id().get(0).getValidity());
     }
 
     private Produto produto;

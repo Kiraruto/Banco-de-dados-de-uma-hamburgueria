@@ -1,4 +1,4 @@
-package br.gustavo.hemburguer.entity.table_pedido.test;
+package br.gustavo.hemburguer.entity.table_pedido;
 
 import br.gustavo.hemburguer.entity.table_pedido.Perfil;
 import org.junit.Test;

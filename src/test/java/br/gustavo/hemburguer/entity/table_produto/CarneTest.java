@@ -1,4 +1,4 @@
-package br.gustavo.hemburguer.entity.table_produto.test;
+package br.gustavo.hemburguer.entity.table_produto;
 
 import br.gustavo.hemburguer.entity.table_produto.Carne;
 import br.gustavo.hemburguer.entity.table_produto.Produto;

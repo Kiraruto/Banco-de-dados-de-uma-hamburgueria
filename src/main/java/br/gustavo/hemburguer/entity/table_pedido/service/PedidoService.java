@@ -39,4 +39,33 @@ public class PedidoService {
 
         return ResponseEntity.badRequest().body("O id não existe");
     }
+
+    public ResponseEntity setStatusTrue(Long id) {
+
+        Optional<Pedido> pedidoOptional = pedidoRepository.findById(id);
+
+        if (!pedidoOptional.isPresent()) {
+            return ResponseEntity.badRequest().body("Id nulo");
+        }
+
+        Optional<Pedido> pedidoOptionalStatus = pedidoRepository.findStatusById(id);
+
+        var savePedido = pedidoOptionalStatus.get();
+        savePedido.statusTrue();
+
+        return ResponseEntity.ok().build();
+    }
+
+    public ResponseEntity deleteById(Long id) {
+
+        Optional<Pedido> pedidoOptional = pedidoRepository.findById(id);
+
+        if (!pedidoOptional.isPresent()) {
+            return ResponseEntity.badRequest().body("Id nulo");
+        }
+
+        pedidoRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
 }

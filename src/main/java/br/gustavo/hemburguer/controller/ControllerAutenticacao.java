@@ -6,6 +6,7 @@ import br.gustavo.hemburguer.entity.table_pedido.enumclass.Role;
 import br.gustavo.hemburguer.security.TokenService;
 import br.gustavo.hemburguer.security.dto.DadosAutenticacao;
 import br.gustavo.hemburguer.security.dto.TokenDadosJWT;
+import br.gustavo.hemburguer.security.service.AutenticacaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,9 @@ public class ControllerAutenticacao {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private AutenticacaoService autenticacaoService;
+
     @PostMapping
     public ResponseEntity<?> efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
 
@@ -43,5 +47,6 @@ public class ControllerAutenticacao {
 
         var tokenJWT = tokenService.gerarToke(usuario);
         return ResponseEntity.ok(new TokenDadosJWT(tokenJWT));
+
     }
 }
