@@ -1,4 +1,11 @@
-# API Documentation
+# API Documentação
+
+# Introdução
+
+Esta API foi desenvolvida para o gerenciamento completo de uma hamburgueria, facilitando o controle de pedidos, produtos, pagamentos e usuários. Ela permite que a equipe administre o catálogo de produtos, registre pedidos de clientes, processe pagamentos e gerencie o cadastro de usuários, incluindo a criação de moderadores com permissões especiais.
+
+Com uma arquitetura robusta baseada em Spring Boot e segurança implementada com JWT, a API garante um fluxo seguro e eficiente para operações diárias, desde a criação de novos itens do menu até a finalização de pedidos e pagamentos.
+
 
 ## Endpoints
 
