@@ -182,7 +182,6 @@ Este projeto utiliza as seguintes dependências:
 - **lombok**: Gera código Java como getters, setters e construtores automaticamente.
 - **spring-boot-starter-test**: Conjunto de ferramentas para testes no Spring Boot.
 - **spring-security-test**: Utilizado para testes de segurança no Spring Security.
-- **spring-boot-starter-security**: Suporte para autenticação e autorização usando Spring Security.
 - **java-jwt**: Biblioteca para criação e verificação de JSON Web Tokens (JWT).
 - **junit**: Framework de testes unitários para Java.
 
