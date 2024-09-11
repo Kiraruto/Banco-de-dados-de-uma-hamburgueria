@@ -174,6 +174,18 @@ Com uma arquitetura robusta baseada em Spring Boot e segurança implementada com
 
 ---
 
+## Autenticação e Autorização
+
+### Autenticação
+- **Método:** JWT (JSON Web Tokens)
+- **Descrição:** A API usa tokens JWT para autenticar e autorizar usuários. O token deve ser incluído no cabeçalho `Authorization` das requisições.
+- **Exemplo de Cabeçalho de Autorização:**
+
+- 
+### Papéis e Permissões
+- **Moderadores:** Têm acesso completo à API, incluindo gerenciamento de produtos, pedidos e usuários.
+- **Usuários Regulares:** Têm acesso restrito, principalmente para criação de pedidos e visualização de produtos.
+
 # Dependências do Projeto
 
 Este projeto utiliza as seguintes dependências:
@@ -246,16 +258,6 @@ Este projeto utiliza as seguintes dependências:
 
 - **Sistemas Operacionais Suportados:** Windows, macOS, Linux (qualquer sistema que suporte Java 17).
 
-## Autenticação e Autorização
 
-### Autenticação
-- **Método:** JWT (JSON Web Tokens)
-- **Descrição:** A API usa tokens JWT para autenticar e autorizar usuários. O token deve ser incluído no cabeçalho `Authorization` das requisições.
-- **Exemplo de Cabeçalho de Autorização:**
-
-- 
-### Papéis e Permissões
-- **Moderadores:** Têm acesso completo à API, incluindo gerenciamento de produtos, pedidos e usuários.
-- **Usuários Regulares:** Têm acesso restrito, principalmente para criação de pedidos e visualização de produtos.
 
 
