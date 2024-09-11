@@ -1,18 +1,19 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
-import br.gustavo.hemburguer.entity.table_pedido.Perfil;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOUsuairo;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PerfilTest {
 
     @Test
     public void testPerfil() {
 
-        Perfil perfil = new Perfil(1L, "Gustavo", "gustavo@gmail.com");
+        DTOUsuairo dtoPerfil = new DTOUsuairo("Gustavo", "071.596.470-41", "gustavo@gmail.com", "12345678");
 
-        assertEquals(Long.valueOf(1L), perfil.getId());
+        Perfil perfil = new Perfil( dtoPerfil);
+
         assertEquals("Gustavo", perfil.getName());
         assertEquals("gustavo@gmail.com", perfil.getEmail());
     }

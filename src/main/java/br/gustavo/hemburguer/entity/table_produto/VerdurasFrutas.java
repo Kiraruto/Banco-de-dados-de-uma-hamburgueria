@@ -42,10 +42,6 @@ public class VerdurasFrutas {
         this.validity = dtoVerdurasFrutas.validity();
     }
 
-    public VerdurasFrutas(long l) {
-        this.id = l;
-    }
-
     public Long getProdutoId() {
         return produto_id != null ? produto_id.getId() : null;
     }

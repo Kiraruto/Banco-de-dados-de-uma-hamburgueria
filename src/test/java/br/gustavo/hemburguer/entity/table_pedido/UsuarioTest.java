@@ -1,10 +1,9 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
-import br.gustavo.hemburguer.entity.table_pedido.Usuario;
 import br.gustavo.hemburguer.entity.table_pedido.enumclass.Role;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UsuarioTest {
 
@@ -12,11 +11,13 @@ public class UsuarioTest {
 
     @Test
     public void testUsuario() {
-        assertEquals("Gustavo", usuarioUser.getName());
-        assertEquals("gustavo@gmail.com", usuarioUser.getEmail());
-        assertEquals("123", usuarioUser.getCpf());
-        assertEquals("152", usuarioUser.getPassword());
-        assertEquals(Role.ROLE_USER, usuarioUser.getRole());
+
+        Usuario usuarioTest = new Usuario("Gustavo", "gustavo@gmail.com", "123", "152");
+
+        assertEquals("Gustavo", usuarioTest.getName());
+        assertEquals("gustavo@gmail.com", usuarioTest.getEmail());
+        assertEquals("123", usuarioTest.getCpf());
+        assertEquals("152", usuarioTest.getPassword());
     }
 
     @Test

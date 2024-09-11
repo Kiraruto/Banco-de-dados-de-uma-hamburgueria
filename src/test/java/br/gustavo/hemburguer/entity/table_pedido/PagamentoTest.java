@@ -1,6 +1,7 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
 import br.gustavo.hemburguer.entity.table_pedido.Pagamento;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPagamento;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,10 +12,13 @@ public class PagamentoTest {
 
     @Test
     public void testPagamento() {
-        assertEquals(Long.valueOf(1L), pagamento.getId());
-        assertEquals("pix", pagamento.getPayment_method());
-        assertEquals(false, pagamento.getStatus());
-        assertEquals(Long.valueOf(1L), pagamento.getPedido_id());
+
+        DTOPagamento dtoPagamento = new DTOPagamento("pix", 1L);
+
+        Pagamento pagamentoTest = new Pagamento(dtoPagamento);
+
+        assertEquals("pix", pagamentoTest.getPayment_method());
+        assertEquals(Long.valueOf(1L), pagamentoTest.getPedido_id());
     }
 
     @Test

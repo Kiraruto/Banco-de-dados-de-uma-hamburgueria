@@ -1,9 +1,7 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.controller.ControllerPedido;
 import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPedido;
 import br.gustavo.hemburguer.entity.table_pedido.service.PedidoService;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -12,7 +10,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 public class ControllerPedidoTest {
@@ -54,9 +52,9 @@ public class ControllerPedidoTest {
     @Test
     public void deleteById() {
         ResponseEntity<?> expectedReponse = ResponseEntity.noContent().build();
-        when(pedidoService.setStatusTrue(dtoPedido.usuario_id())).thenReturn(expectedReponse);
+        when(pedidoService.deleteById(dtoPedido.usuario_id())).thenReturn(expectedReponse);
 
-        ResponseEntity<?> response = controllerPedido.putPedido(dtoPedido.usuario_id());
+        ResponseEntity<?> response = controllerPedido.deletePedido(dtoPedido.usuario_id());
 
         assertEquals(expectedReponse, response);
     }

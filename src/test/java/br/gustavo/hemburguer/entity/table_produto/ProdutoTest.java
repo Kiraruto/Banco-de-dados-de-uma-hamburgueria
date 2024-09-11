@@ -34,9 +34,10 @@ public class ProdutoTest {
         List<Carne> carnes = Arrays.asList(carne);
         List<VerdurasFrutas> verdurasFrutas = Arrays.asList(verdura);
 
-        Produto produto = new Produto(1L, "Burguer", carnes, paes, verdurasFrutas);
+        DTOProduto dtoProduto = new DTOProduto("Burguer" , DTOCarne.fromList(carnes), new DTOPaes(paes), DTOVerdurasFrutas.fromList(verdurasFrutas));
 
-        assertEquals(Long.valueOf(1L), produto.getId());
+        Produto produto = new Produto(dtoProduto);
+
         assertEquals("Burguer", produto.getName());
 
         assertEquals(1, produto.getCarnes_id().size());
@@ -73,6 +74,7 @@ public class ProdutoTest {
 
     @Test
     public void atualizarInformacoes() {
+
         DTOCarne dtoCarne = new DTOCarne("Alcatra","Brazil", 5.5, 50, 80.5, timestampAll, timestampAll, 1L);
         DTOPaes dtoPaes = new DTOPaes("pão", "francês", 500, timestampAll, 0.20, timestampAll, 1L);
         DTOVerdurasFrutas dtoVerduraFruta = new DTOVerdurasFrutas("Alface", "Brazil", 2.0, timestampAll, 5.0, timestampAll,1L);

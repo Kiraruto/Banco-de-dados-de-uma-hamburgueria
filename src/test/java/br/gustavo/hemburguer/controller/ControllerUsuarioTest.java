@@ -1,6 +1,5 @@
 package br.gustavo.hemburguer.controller;
 
-import br.gustavo.hemburguer.controller.ControllerUsuario;
 import br.gustavo.hemburguer.entity.table_pedido.dto.DTOUsuairo;
 import br.gustavo.hemburguer.entity.table_pedido.service.UsuarioService;
 import org.junit.jupiter.api.BeforeEach;

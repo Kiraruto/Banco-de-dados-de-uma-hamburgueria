@@ -45,22 +45,6 @@ public class Carne {
     }
 
 
-    public Carne(Produto produto) {
-        for (Carne carne : produto.getCarnes_id()) {
-            this.name = carne.getName();
-            this.origin = carne.getOrigin();
-            this.fat_percentage = carne.getFat_percentage();
-            this.weight = carne.getWeight();
-            this.price = carne.getPrice();
-            this.harvest_date = carne.harvest_date;
-            this.validity = carne.getValidity();
-        }
-    }
-
-    public Carne(long l) {
-        this.id = l;
-    }
-
     public Long getProdutoId() {
         return produto_id != null ? produto_id.getId() : null;
     }

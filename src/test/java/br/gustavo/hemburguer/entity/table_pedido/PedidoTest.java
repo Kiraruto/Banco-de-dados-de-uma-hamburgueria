@@ -1,13 +1,12 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
-import br.gustavo.hemburguer.entity.table_pedido.Pedido;
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOPedido;
 import org.junit.Test;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PedidoTest {
 
@@ -16,10 +15,12 @@ public class PedidoTest {
 
     @Test
     public void testPedido() {
-        assertEquals(Long.valueOf(1L), pedido.getId());
-        assertEquals(timestamp, pedido.getData());
-        assertEquals(false, pedido.getStatus());
-        assertEquals(Long.valueOf(1L), pedido.getUsuario_id());
+
+        DTOPedido dtoPedido = new DTOPedido(1L);
+
+        Pedido pedidoTest = new Pedido(dtoPedido);
+
+        assertEquals(Long.valueOf(1L), pedidoTest.getUsuario_id());
     }
 
     @Test
