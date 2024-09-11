@@ -1,5 +1,6 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
+import br.gustavo.hemburguer.entity.table_pedido.dto.DTOUsuairo;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,9 +10,10 @@ public class PerfilTest {
     @Test
     public void testPerfil() {
 
-        Perfil perfil = new Perfil(1L, "Gustavo", "gustavo@gmail.com");
+        DTOUsuairo dtoUsuairo = new DTOUsuairo("Gustavo", "123", "gustavo@gmail.com", "152");
 
-        assertEquals(Long.valueOf(1L), perfil.getId());
+        Perfil perfil = new Perfil(dtoUsuairo);
+
         assertEquals("Gustavo", perfil.getName());
         assertEquals("gustavo@gmail.com", perfil.getEmail());
     }

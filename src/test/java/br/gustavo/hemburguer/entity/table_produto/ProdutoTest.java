@@ -30,9 +30,10 @@ public class ProdutoTest {
         List<Carne> carnes = Arrays.asList(carne);
         List<VerdurasFrutas> verdurasFrutas = Arrays.asList(verdura);
 
-        Produto produto = new Produto(1L, "Burguer", carnes, paes, verdurasFrutas);
+        DTOProduto dtoProduto = new DTOProduto("Burguer", DTOCarne.fromList(carnes), new DTOPaes(paes), DTOVerdurasFrutas.fromList(verdurasFrutas));
 
-        assertEquals(Long.valueOf(1L), produto.getId());
+        Produto produto = new Produto(dtoProduto);
+
         assertEquals("Burguer", produto.getName());
 
         assertEquals(1, produto.getCarnes_id().size());

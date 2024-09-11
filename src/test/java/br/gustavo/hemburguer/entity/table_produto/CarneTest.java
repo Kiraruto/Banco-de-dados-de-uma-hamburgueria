@@ -1,5 +1,6 @@
 package br.gustavo.hemburguer.entity.table_produto;
 
+import br.gustavo.hemburguer.entity.table_produto.dto.DTOCarne;
 import org.junit.Test;
 
 import java.sql.Timestamp;
@@ -14,9 +15,10 @@ public class CarneTest {
         Timestamp harvest = Timestamp.valueOf(LocalDateTime.now());
         Timestamp validity = Timestamp.valueOf(LocalDateTime.now());
 
-        Carne carne = new Carne(1L, "Alcatra","Brazil", 5.5, 50, 80.5, harvest, validity, new Produto(1L));
+        DTOCarne dtoCarne = new DTOCarne("Alcatra","Brazil", 5.5, 50, 80.5, harvest, validity, 1L);
 
-        assertEquals(Long.valueOf(1L), carne.getId());
+        Carne carne = new Carne(dtoCarne);
+
         assertEquals("Alcatra", carne.getName());
         assertEquals("Brazil", carne.getOrigin());
         assertEquals(Double.valueOf(5.5), carne.getFat_percentage());
@@ -24,7 +26,5 @@ public class CarneTest {
         assertEquals(Double.valueOf(80.5), carne.getPrice());
         assertEquals(harvest, carne.getHarvest_date());
         assertEquals(validity, carne.getValidity());
-        assertEquals(Long.valueOf(1L), carne.getProdutoId());
     }
-
 }

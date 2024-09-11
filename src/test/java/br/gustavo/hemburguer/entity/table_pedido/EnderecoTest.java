@@ -11,13 +11,17 @@ public class EnderecoTest {
 
     @Test
     public void testEndereco() {
-        assertEquals(Long.valueOf(1L), endereco.getId());
-        assertEquals(Long.valueOf(1L), endereco.getUser());
-        assertEquals("Rua A", endereco.getStreet());
-        assertEquals("123", endereco.getNumber());
-        assertEquals("Cidade X", endereco.getCity());
-        assertEquals(Integer.valueOf(12345), endereco.getZip_code());
-        assertEquals("Estado Y", endereco.getState());
+
+        DTOEndereco dtoEndereco = new DTOEndereco(1L, "Rua A", "123", "Cidade X", 12345, "Estado Y");
+
+        Endereco enderecoTest = new Endereco(dtoEndereco);
+
+        assertEquals(Long.valueOf(1L), enderecoTest.getUser());
+        assertEquals("Rua A", enderecoTest.getStreet());
+        assertEquals("123", enderecoTest.getNumber());
+        assertEquals("Cidade X", enderecoTest.getCity());
+        assertEquals(Integer.valueOf(12345), enderecoTest.getZip_code());
+        assertEquals("Estado Y", enderecoTest.getState());
     }
 
     @Test
