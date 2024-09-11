@@ -166,3 +166,23 @@
   - `200`: OK
 
 ---
+
+# Dependências do Projeto
+
+Este projeto utiliza as seguintes dependências:
+
+- **spring-boot-starter-validation**: Fornece suporte para validação de dados no Spring Boot.
+- **spring-boot-starter-web**: Facilita o desenvolvimento de APIs RESTful e aplicações web.
+- **flyway-core**: Gerenciamento de versões de banco de dados com migrações.
+- **spring-boot-starter-data-jpa**: Integração do Spring Boot com JPA para manipulação de dados.
+- **mockito-core**: Biblioteca de testes para mockar objetos e comportamentos.
+- **flyway-mysql**: Suporte para migrações Flyway específicas para MySQL.
+- **springdoc-openapi-starter-webmvc-ui**: Integração do Spring Boot com Swagger/OpenAPI para documentação automática de APIs.
+- **mysql-connector-j**: Conector JDBC para MySQL.
+- **lombok**: Gera código Java como getters, setters e construtores automaticamente.
+- **spring-boot-starter-test**: Conjunto de ferramentas para testes no Spring Boot.
+- **spring-security-test**: Utilizado para testes de segurança no Spring Security.
+- **spring-boot-starter-security**: Suporte para autenticação e autorização usando Spring Security.
+- **java-jwt**: Biblioteca para criação e verificação de JSON Web Tokens (JWT).
+- **junit**: Framework de testes unitários para Java.
+
