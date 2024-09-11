@@ -1,14 +1,11 @@
 package br.gustavo.hemburguer.entity.table_produto;
 
-import br.gustavo.hemburguer.entity.table_produto.Carne;
-import br.gustavo.hemburguer.entity.table_produto.Produto;
 import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CarneTest {
 

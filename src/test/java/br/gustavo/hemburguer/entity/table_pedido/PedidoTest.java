@@ -1,13 +1,11 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
-import br.gustavo.hemburguer.entity.table_pedido.Pedido;
 import org.junit.Test;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PedidoTest {
 

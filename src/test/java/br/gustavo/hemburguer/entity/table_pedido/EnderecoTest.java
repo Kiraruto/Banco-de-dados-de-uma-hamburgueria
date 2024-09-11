@@ -1,10 +1,9 @@
 package br.gustavo.hemburguer.entity.table_pedido;
 
-import br.gustavo.hemburguer.entity.table_pedido.Endereco;
 import br.gustavo.hemburguer.entity.table_pedido.dto.DTOEndereco;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class EnderecoTest {
 

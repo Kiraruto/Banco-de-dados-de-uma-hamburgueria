@@ -1,9 +1,5 @@
 package br.gustavo.hemburguer.entity.table_produto;
 
-import br.gustavo.hemburguer.entity.table_produto.Carne;
-import br.gustavo.hemburguer.entity.table_produto.Paes;
-import br.gustavo.hemburguer.entity.table_produto.Produto;
-import br.gustavo.hemburguer.entity.table_produto.VerdurasFrutas;
 import br.gustavo.hemburguer.entity.table_produto.dto.DTOCarne;
 import br.gustavo.hemburguer.entity.table_produto.dto.DTOPaes;
 import br.gustavo.hemburguer.entity.table_produto.dto.DTOProduto;

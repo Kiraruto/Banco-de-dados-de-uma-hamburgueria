@@ -1,13 +1,11 @@
 package br.gustavo.hemburguer.entity.table_produto;
 
-import br.gustavo.hemburguer.entity.table_produto.Paes;
-import br.gustavo.hemburguer.entity.table_produto.Produto;
 import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PaesTest {
 
