@@ -7,7 +7,7 @@
 ### `/endereco`
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar endereço para usuário."
 - **Responses**: 
   - `200`: OK
 
@@ -16,9 +16,9 @@
 ### `/endereco/{id}`
 
 - **Method**: `PUT`
-- **Summary**: null
+- **Summary**: "Atualizar endereço do usuário."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do usuário para atualizar o endereço."
 - **Responses**: 
   - `200`: OK
 
@@ -27,12 +27,12 @@
 ### `/itemPedido`
 
 - **Method**: `GET`
-- **Summary**: null
+- **Summary**: "Ver os itens pedidos."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar os itens pedidos."
 - **Responses**: 
   - `200`: OK
 
@@ -41,7 +41,7 @@
 ### `/login`
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Realizar login, disponível apenas para usuários moderadores."
 - **Responses**: 
   - `200`: OK
 
@@ -50,7 +50,7 @@
 ### `/pagamento`
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar pagamento."
 - **Responses**: 
   - `200`: OK
 
@@ -59,9 +59,9 @@
 ### `/pagamento/{id}`
 
 - **Method**: `PUT`
-- **Summary**: null
+- **Summary**: "Atualizar status do pagamento de falso para verdadeiro."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do pagamento a ser atualizado."
 - **Responses**: 
   - `200`: OK
 
@@ -70,7 +70,7 @@
 ### `/pedido`
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar pedido."
 - **Responses**: 
   - `200`: OK
 
@@ -79,16 +79,16 @@
 ### `/pedido/{id}`
 
 - **Method**: `PUT`
-- **Summary**: null
+- **Summary**: "Atualizar pedido."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do pedido a ser atualizado."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `DELETE`
-- **Summary**: null
+- **Summary**: "Deletar pedido pelo ID."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do pedido a ser deletado."
 - **Responses**: 
   - `200`: OK
 
@@ -97,12 +97,12 @@
 ### `/produto`
 
 - **Method**: `GET`
-- **Summary**: null
+- **Summary**: "Ver todos os produtos."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar produtos."
 - **Responses**: 
   - `200`: OK
 
@@ -111,23 +111,23 @@
 ### `/produto/{id}`
 
 - **Method**: `GET`
-- **Summary**: null
+- **Summary**: "Ver produto pelo ID."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do produto."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `PUT`
-- **Summary**: null
+- **Summary**: "Atualizar produto."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do produto a ser atualizado."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `DELETE`
-- **Summary**: null
+- **Summary**: "Deletar produto pelo ID."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do produto a ser deletado."
 - **Responses**: 
   - `200`: OK
 
@@ -136,12 +136,12 @@
 ### `/usuario`
 
 - **Method**: `GET`
-- **Summary**: null
+- **Summary**: "Ver todos os usuários."
 - **Responses**: 
   - `200`: OK
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar usuários não moderadores."
 - **Responses**: 
   - `200`: OK
 
@@ -150,7 +150,7 @@
 ### `/usuario/moderator`
 
 - **Method**: `POST`
-- **Summary**: null
+- **Summary**: "Criar usuários moderadores."
 - **Responses**: 
   - `200`: OK
 
@@ -159,9 +159,9 @@
 ### `/usuario/{id}`
 
 - **Method**: `DELETE`
-- **Summary**: null
+- **Summary**: "Deletar usuário pelo ID, também deleta o endereço."
 - **Parameters**:
-  - `id`: null
+  - `id`: "ID do usuário a ser deletado."
 - **Responses**: 
   - `200`: OK
 
